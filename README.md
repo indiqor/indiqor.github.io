@@ -19,3 +19,4 @@ View your app in AI Studio: https://ai.studio/apps/168f21c8-6814-4328-953d-9910f
 3. Run the app:
    `npm run dev`
 # -indiqor-indiqor.github.io
+# -indiqor-indiqor.github.io
