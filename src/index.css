@@ -48,21 +48,61 @@ html {
 
 /* Customized print styling for certificates standard */
 @media print {
+  @page {
+    size: landscape;
+    margin: 0;
+  }
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+    background-color: #030712 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
+  /* Hide all siblings and other DOM contents completely from printable canvas */
   body * {
-    visibility: hidden;
+    visibility: hidden !important;
   }
-  #ind-certificate-render-frame, #ind-certificate-render-frame * {
-    visibility: visible;
+  
+  /* Selectively reveal only the target certificate node and all its internal children */
+  #ind-certificate-render-frame,
+  #ind-certificate-render-frame * {
+    visibility: visible !important;
   }
+  
+  /* Elevate and map high-fidelity frame to print dimensions */
   #ind-certificate-render-frame {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    margin: 0 !important;
+    padding: 3rem !important;
+    box-sizing: border-box !important;
     border: none !important;
-    box-shadow: none !important;
-    background: #000000 !important;
-    color: #ffffff !important;
+    border-radius: 0 !important;
+    z-index: 9999999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    page-break-inside: avoid !important;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
+    
+    /* Retain color gradients during print rendering */
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide print buttons and extra layout controllers */
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
   }
 }
 
