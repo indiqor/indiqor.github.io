@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React from "react";
 import { ArrowUpRight, ChevronRight, Terminal, Server, Sparkles, Code, Cpu } from "lucide-react";
 
@@ -44,7 +49,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
 
             {/* Core Subtitle description */}
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-xl" id="hero-subtitle">
-              We help businesses build scalable software solutions while empowering future developers through professional training and internship programs.
+              We help businesses build scalable software solutions while empowering future developers through professional training, internship programs, and cryptographic credentials.
             </p>
 
             {/* Call to Actions matching user spec */}
@@ -52,9 +57,9 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
               <button
                 onClick={onOpenConsultation}
                 className="group relative flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-7 py-4 text-sm font-bold text-white shadow-xl shadow-blue-500/20 hover:opacity-95 active:scale-95 transition-all text-center cursor-pointer"
-                id="hero-btn-consultation"
+                id="hero-btn-contact"
               >
-                Get Free Consultation 
+                Get In Touch 
                 <ArrowUpRight className="h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </button>
               
@@ -80,7 +85,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
               </div>
               <div>
                 <span className="block text-[#a5b4fc] font-semibold font-mono text-sm mb-0.5">Internships</span>
-                Project-Based Training
+                Project-Based Tracks
               </div>
             </div>
 
@@ -142,7 +147,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 <div className="rounded-lg bg-white/5 p-2.5 border border-white/5 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Server className="h-3.5 w-3.5 text-cyan-400" />
-                    <span className="font-mono text-[10px] text-white">AWS Cluster</span>
+                    <span className="font-mono text-[10px] text-white font-semibold">AWS Cluster</span>
                   </div>
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 </div>
@@ -151,7 +156,7 @@ export default function Hero({ onOpenConsultation }: HeroProps) {
                 <div className="rounded-lg bg-white/5 p-2.5 border border-white/5 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Sparkles className="h-3.5 w-3.5 text-purple-400" />
-                    <span className="font-mono text-[10px] text-white">Gemini API</span>
+                    <span className="font-mono text-[10px] text-white font-semibold">Gemini API</span>
                   </div>
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
                 </div>

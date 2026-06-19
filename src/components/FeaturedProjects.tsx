@@ -1,19 +1,15 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React, { useState } from "react";
 import { PROJECTS_DATA } from "../data/agencyData";
 import { Project } from "../types";
-import { X, ExternalLink, Sparkles, TrendingUp, ShieldAlert, CheckCircle2 } from "lucide-react";
+import { X, ExternalLink, TrendingUp, CheckCircle2 } from "lucide-react";
 
 export default function FeaturedProjects() {
   const [selectedCase, setSelectedCase] = useState<Project | null>(null);
-
-  // Return standard icon colors to match thematic metrics
-  const getStatColor = (id: string) => {
-    switch (id) {
-      case "ecommerce-platform": return "from-cyan-400 to-blue-500 text-cyan-400";
-      case "fintech-dashboard": return "from-emerald-400 to-teal-500 text-emerald-400";
-      default: return "from-blue-500 to-indigo-500 text-blue-300";
-    }
-  };
 
   return (
     <section 
@@ -37,7 +33,7 @@ export default function FeaturedProjects() {
             Recent Success Stories
           </h2>
           <p className="text-sm sm:text-base text-gray-400 max-w-xl mx-auto leading-relaxed">
-            Discover how we code high-traffic distributed software, secure patient data pipelines, and scale online retail operations globally.
+            Discover how we code high-traffic distributed software, secure critical ledger verification dashboards, and scale digital products globally.
           </p>
         </div>
 
@@ -54,7 +50,7 @@ export default function FeaturedProjects() {
               <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-[#090f20] border border-white/[0.04]">
                 {/* Visual Simulation of code/mock mockup inside */}
                 <div className="absolute inset-4 rounded-lg bg-[#040813] border border-white/5 opacity-80 flex flex-col justify-between p-4 group-hover:scale-[1.02] transition-transform duration-500">
-                  <div className="flex items-center justify-between border-b border-white/[0.05] pb-2 font-mono text-[9px] text-gray-500">
+                  <div className="flex items-center justify-between border-b border-white/[0.05] pb-2 font-mono text-[9px] text-gray-500 select-none">
                     <span>INDEX: 0{idx + 1} // SYS_STAGING</span>
                     <span className="flex h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse" />
                   </div>
@@ -64,16 +60,16 @@ export default function FeaturedProjects() {
                     <div className="h-2 w-1/3 rounded bg-blue-500/20" />
                     <div className="h-10 w-full rounded-lg border border-blue-500/10 bg-blue-500/[0.02] p-2 flex items-center justify-between">
                       <div className="space-y-1">
-                        <div className="h-1.5 w-16 rounded bg-gray-600" />
+                        <div className="h-1.5 w-16 rounded bg-gray-650" />
                         <div className="h-2 w-28 rounded bg-gradient-to-r from-blue-400 to-cyan-500" />
                       </div>
                       <span className="font-mono text-[10px] text-cyan-400 font-extrabold">{proj.statHighlight}</span>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 text-[8px] font-mono text-gray-650 pt-2 border-t border-white/[0.03]">
+                  <div className="flex items-center gap-1.5 text-[8px] font-mono text-gray-400 pt-2 border-t border-white/[0.03]">
                     {proj.technologies.slice(0, 3).map((item) => (
-                      <span key={item} className="text-gray-400">#{item.replace(" ", "")}</span>
+                      <span key={item}>#{item.replace(" ", "")}</span>
                     ))}
                   </div>
                 </div>
@@ -85,7 +81,7 @@ export default function FeaturedProjects() {
               {/* Informative text body */}
               <div className="p-6 space-y-4">
                 <div>
-                  <span className="font-mono text-[9px] font-bold tracking-wider text-blue-400 uppercase">
+                  <span className="font-mono text-[9px] font-bold tracking-wider text-blue-400 uppercase select-none">
                     {proj.clientSector}
                   </span>
                   <h3 className="font-sans text-xl font-bold tracking-tight text-white mt-1 group-hover:text-cyan-400 transition-colors">
@@ -97,10 +93,10 @@ export default function FeaturedProjects() {
                 </div>
 
                 {/* Measurable success milestone tag */}
-                <div className={`rounded-xl bg-white/[0.03] p-3 text-xs flex items-center gap-2.5 border border-white/[0.05]`}>
+                <div className="rounded-xl bg-white/[0.03] p-3 text-xs flex items-center gap-2.5 border border-white/[0.05]">
                   <TrendingUp className="h-4 w-4 text-emerald-400 shrink-0" />
                   <div>
-                    <span className="block text-[9px] font-mono text-gray-500 uppercase leading-none">Measured Impact</span>
+                    <span className="block text-[9px] font-mono text-gray-500 uppercase leading-none select-none">Measured Impact</span>
                     <span className="text-white font-semibold block mt-1">{proj.statHighlight} Delivered</span>
                   </div>
                 </div>
@@ -131,13 +127,13 @@ export default function FeaturedProjects() {
           />
 
           <div 
-            className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-[#0c142b] p-6 sm:p-8 text-white shadow-2xl shadow-blue-500/10 animate-scaleUp"
+            className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-[#0c142b] p-6 sm:p-8 text-white shadow-2xl shadow-blue-500/10 animate-scaleUp font-sans"
             id="portfolio-detail-modal"
           >
             {/* Close */}
             <button
               onClick={() => setSelectedCase(null)}
-              className="absolute top-4 right-4 rounded-full border border-white/10 bg-white/5 p-2 text-gray-400 hover:bg-white/10 hover:text-white transition-colors"
+              className="absolute top-4 right-4 rounded-full border border-white/10 bg-white/5 p-2 text-gray-400 hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
               id="btn-close-case-modal"
               aria-label="Close case study"
             >
@@ -146,7 +142,7 @@ export default function FeaturedProjects() {
 
             {/* Content modal */}
             <div>
-              <span className="font-mono text-[10px] font-bold tracking-wider text-blue-400 uppercase">
+              <span className="font-mono text-[10px] font-bold tracking-wider text-blue-400 uppercase select-none">
                 {selectedCase.clientSector} • Architectural Audit
               </span>
               <h3 className="font-sans text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1 mb-4">
@@ -156,7 +152,7 @@ export default function FeaturedProjects() {
               {/* Technologies List */}
               <div className="flex flex-wrap gap-1.5 mb-6">
                 {selectedCase.technologies.map((item) => (
-                  <span key={item} className="rounded bg-white/5 px-2.5 py-1 font-mono text-xs text-gray-300">
+                  <span key={item} className="rounded bg-white/5 px-2.5 py-1 font-mono text-xs text-gray-300 select-none">
                     {item}
                   </span>
                 ))}
@@ -171,8 +167,8 @@ export default function FeaturedProjects() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 pt-6 border-t border-white/5">
                 
                 {/* Result Highlight */}
-                <div className="rounded-xl bg-emerald-500/5 border border-emerald-500/10 p-4">
-                  <h4 className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-emerald-400 font-mono mb-2">
+                <div className="rounded-xl bg-emerald-500/10 border border-emerald-500/20 p-4">
+                  <h4 className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-emerald-400 font-mono mb-2 select-none">
                     <TrendingUp className="h-3.5 w-3.5" /> Measured System ROI
                   </h4>
                   <p className="text-xs text-gray-300 leading-normal">
@@ -181,8 +177,8 @@ export default function FeaturedProjects() {
                 </div>
 
                 {/* Compliance Info */}
-                <div className="rounded-xl bg-blue-500/5 border border-blue-500/10 p-4 flex flex-col justify-between">
-                  <h4 className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-blue-400 font-mono mb-2">
+                <div className="rounded-xl bg-blue-500/10 border border-blue-500/20 p-4 flex flex-col justify-between">
+                  <h4 className="flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-blue-400 font-mono mb-2 select-none">
                     <CheckCircle2 className="h-3.5 w-3.5" /> Compliance Verification
                   </h4>
                   <p className="text-xs text-gray-300 leading-normal">

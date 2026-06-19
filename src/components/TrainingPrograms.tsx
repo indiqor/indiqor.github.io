@@ -1,6 +1,11 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React from "react";
 import { TRAINING_DATA, TRAINING_FEATURES } from "../data/agencyData";
-import { Check, Calendar, Laptop, BookOpen, Layers, Server, Code, Sparkles, KeyRound } from "lucide-react";
+import { Check, Calendar, Layers, Server, Code, Sparkles, KeyRound } from "lucide-react";
 
 interface TrainingProgramsProps {
   onOpenConsultation: () => void;
@@ -98,7 +103,7 @@ export default function TrainingPrograms({ onOpenConsultation }: TrainingProgram
                 <div className="mt-8 pt-4 border-t border-white/5">
                   <button 
                     onClick={onOpenConsultation}
-                    className="w-full text-center rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 hover:text-white py-2.5 text-xs font-bold text-gray-300 border border-white/5 hover:border-transparent transition-all"
+                    className="w-full text-center rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 hover:text-white py-2.5 text-xs font-bold text-gray-300 border border-white/5 hover:border-transparent transition-all cursor-pointer"
                   >
                     Enroll / Inquire Now
                   </button>
@@ -145,7 +150,7 @@ export default function TrainingPrograms({ onOpenConsultation }: TrainingProgram
             <div className="mt-8 pt-6 border-t border-white/5">
               <button
                 onClick={onOpenConsultation}
-                className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 py-3.5 text-center text-xs font-bold text-white shadow-lg shadow-blue-500/10 hover:opacity-95"
+                className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 py-3.5 text-center text-xs font-bold text-white shadow-lg shadow-blue-500/10 hover:opacity-95 cursor-pointer"
               >
                 Inquire For Batches
               </button>

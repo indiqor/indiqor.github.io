@@ -1,34 +1,71 @@
-export interface Service {
-  id: string;
-  title: string;
-  description: string;
-  details: string;
-  iconName: string;
-  technologies: string[];
-  features: string[];
-}
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
 
 export interface Project {
   id: string;
   title: string;
-  description: string;
-  category: string;
-  technologies: string[];
-  results: string;
-  statHighlight: string;
-  longDescription: string;
   clientSector: string;
+  description: string;
+  statHighlight: string;
+  technologies: string[];
+  longDescription: string;
+  results: string;
+}
+
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  iconName: string;
+  technologies: string[];
+  details: string;
+  features: string[];
+}
+
+export interface FAQ {
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface TrainingCourse {
+  id: string;
+  title: string;
+  iconName: string;
+  duration: string;
+  description: string;
+  topics: string[];
+}
+
+export interface InternshipTrack {
+  id: string;
+  title: string;
+  iconName: string;
+  duration: string;
+  description: string;
+  benefits: string[];
 }
 
 export interface Testimonial {
   id: string;
+  rating: number;
+  feedback: string;
   author: string;
   position: string;
   company: string;
-  rating: number;
-  feedback: string;
-  avatarBlurHash?: string;
-  avatarUrl?: string;
+}
+
+export interface TrustedBrand {
+  name: string;
+  type: string;
+}
+
+export interface ProcessStep {
+  step: string;
+  title: string;
+  description: string;
 }
 
 export interface PricingPlan {
@@ -42,13 +79,13 @@ export interface PricingPlan {
   ctaText: string;
 }
 
-export interface LeadSubmission {
-  id: string;
-  name: string;
-  email: string;
-  company: string;
-  serviceType: string;
-  budget: string;
-  message: string;
-  submittedAt: string;
+export interface VerifiedCertificate {
+  certificateId: string;
+  recipientName: string;
+  type: "training" | "internship";
+  courseName: string;
+  grade: string;
+  issueDate: string;
+  uuid: string;
+  sha256: string;
 }

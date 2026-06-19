@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React from "react";
 import { PROCESS_STEPS_DATA } from "../data/agencyData";
 import { Search, PenTool, Code, CheckSquare, Sparkles, Rocket } from "lucide-react";
@@ -53,7 +58,7 @@ export default function DevelopmentProcess() {
             {PROCESS_STEPS_DATA.map((item, idx) => (
               <div 
                 key={item.step}
-                className="group flex flex-col items-center text-center relative"
+                className="group flex flex-col items-center text-center relative font-sans"
                 id={`process-step-block-${item.step}`}
               >
                 
@@ -62,13 +67,13 @@ export default function DevelopmentProcess() {
                   {getStepIcon(item.step)}
                   
                   {/* Absolute outer numeric badge marker */}
-                  <span className="absolute -top-1.5 -right-1.5 rounded-full bg-cyan-950/90 border border-cyan-500/30 text-[9px] px-1.5 py-0.2 font-mono text-cyan-400">
+                  <span className="absolute -top-1.5 -right-1.5 rounded-full bg-cyan-950/90 border border-cyan-500/30 text-[9px] px-1.5 py-0.2 font-mono text-cyan-400 select-none">
                     {item.step}
                   </span>
                 </div>
 
                 {/* Text Card */}
-                <div className="mt-6 rounded-2xl border border-white/[0.04] bg-[#0c142b]/50 p-5 group-hover:bg-[#0c142b]/90 group-hover:border-cyan-500/20 transition-all duration-300 w-full flex-grow flex flex-col justify-between">
+                <div className="mt-6 rounded-2xl border border-white/[0.04] bg-[#0c142b]/50 p-5 group-hover:bg-[#0c142b]/95 group-hover:border-cyan-500/20 transition-all duration-300 w-full flex-grow flex flex-col justify-between">
                   <div>
                     <h3 className="font-sans font-bold text-sm sm:text-base text-white group-hover:text-cyan-400 transition-colors">
                       {item.title}

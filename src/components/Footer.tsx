@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React from "react";
 import { Sparkles, Mail, Clock, ArrowRight, ShieldCheck } from "lucide-react";
 import { IndiqorLogo } from "./Header";
@@ -28,7 +33,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
 
             <div className="max-w-2xl mx-auto space-y-6">
               
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-300 border border-cyan-500/20">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-300 border border-cyan-500/20 select-none">
                 <Sparkles className="h-3.5 w-3.5" /> Transform Today
               </span>
 
@@ -37,26 +42,19 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
               </h2>
 
               <p className="text-gray-400 text-sm sm:text-base max-w-lg mx-auto leading-relaxed">
-                Partner with INDIQOR Technologies for software development, professional training, and internship opportunities.
+                Partner with INDIQOR Technologies for software development, professional training, and certified student internships.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+              <div className="flex justify-center pt-4">
                 <button
                   onClick={() => {
                     const el = document.getElementById("contact");
                     el?.scrollIntoView({ behavior: "smooth" });
                   }}
-                  className="w-full sm:w-auto rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-8 py-4 text-xs font-extrabold text-white shadow-xl shadow-blue-500/20 hover:opacity-95 active:scale-95 transition-all text-center cursor-pointer flex items-center justify-center gap-2"
+                  className="w-full sm:w-auto rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-10 py-4.5 text-sm font-extrabold text-white shadow-xl shadow-blue-500/20 hover:opacity-95 active:scale-95 transition-all text-center cursor-pointer flex items-center justify-center gap-2"
                   id="cta-contact-btn"
                 >
                   Contact Us <ArrowRight className="h-4 w-4" />
-                </button>
-                <button
-                  onClick={onOpenConsultation}
-                  className="w-full sm:w-auto rounded-xl border border-white/10 bg-white/5 px-8 py-4 text-xs font-extrabold text-gray-300 hover:bg-white/10 hover:text-white transition-all text-center cursor-pointer"
-                  id="cta-consult-btn"
-                >
-                  Request Consultation
                 </button>
               </div>
 
@@ -68,7 +66,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
       {/* ========================================== */}
       {/* 2. CORPORATE FOOTER COLUMNS                */}
       {/* ========================================== */}
-      <section className="relative py-16 border-t border-white/[0.04] z-10">
+      <section className="relative py-16 border-t border-white/[0.04] z-10 font-sans">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
             
@@ -98,7 +96,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
                 <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-cyan-400">
                   Company
                 </h4>
-                <ul className="space-y-2.5 text-xs">
+                <ul className="space-y-2.5 text-xs text-sans">
                   <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
                   <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
                   <li><a href="#training" className="text-gray-400 hover:text-white transition-colors">Training Programs</a></li>
@@ -112,7 +110,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
                 <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-gray-200">
                   Development
                 </h4>
-                <ul className="space-y-2.5 text-xs">
+                <ul className="space-y-2.5 text-xs text-sans">
                   <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Software Dev</a></li>
                   <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Web Development</a></li>
                   <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Mobile Platforms</a></li>
@@ -125,7 +123,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
                 <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-gray-200">
                   Training
                 </h4>
-                <ul className="space-y-2.5 text-xs">
+                <ul className="space-y-2.5 text-xs text-sans">
                   <li><a href="#training" className="text-gray-400 hover:text-white transition-colors">Java Training</a></li>
                   <li><a href="#training" className="text-gray-400 hover:text-white transition-colors">Spring Boot</a></li>
                   <li><a href="#training" className="text-gray-400 hover:text-white transition-colors">React Training</a></li>
@@ -138,7 +136,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
                 <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-gray-200">
                   Internships
                 </h4>
-                <ul className="space-y-2.5 text-xs">
+                <ul className="space-y-2.5 text-xs text-sans">
                   <li><a href="#internships" className="text-gray-400 hover:text-white transition-colors">Java Internship</a></li>
                   <li><a href="#internships" className="text-gray-400 hover:text-white transition-colors">Spring Boot</a></li>
                   <li><a href="#internships" className="text-gray-400 hover:text-white transition-colors">React Developer</a></li>
@@ -151,7 +149,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
                 <h4 className="font-mono text-xs font-bold uppercase tracking-wider text-cyan-400">
                   Contact
                 </h4>
-                <ul className="space-y-3.5 text-xs">
+                <ul className="space-y-3.5 text-xs text-sans">
                   <li className="flex flex-col gap-1">
                     <span className="text-gray-500 text-[10px] uppercase font-mono">Email Us</span>
                     <a href="mailto:indiqor@rediffmail.com" className="text-[#a5b4fc] font-bold hover:underline break-all">
@@ -178,7 +176,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
       {/* ========================================== */}
       {/* 3. COPYRIGHT BAR                           */}
       {/* ========================================== */}
-      <section className="relative py-8 border-t border-white/[0.04] bg-[#02050e] text-xs text-gray-500 z-10">
+      <section className="relative py-8 border-t border-white/[0.04] bg-[#02050e] text-xs text-gray-500 z-10 font-sans">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             
@@ -186,7 +184,7 @@ export default function Footer({ onOpenConsultation }: FooterProps) {
               © {currentYear} INDIQOR Technologies. All Rights Reserved.
             </div>
 
-            <div className="flex items-center gap-2 text-[10px] font-mono text-gray-500">
+            <div className="flex items-center gap-2 text-[10px] font-mono text-gray-500 select-none">
               <ShieldCheck className="h-4 w-4 text-cyan-400" />
               <span>Certified Professional Digital Security Standard</span>
             </div>

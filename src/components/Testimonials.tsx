@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React, { useState, useEffect } from "react";
 import { TESTIMONIALS_DATA } from "../data/agencyData";
 import { Star, ChevronLeft, ChevronRight, Quote, Landmark } from "lucide-react";
@@ -33,7 +38,7 @@ export default function Testimonials() {
     const activeGradient = bgGradients[index % bgGradients.length];
 
     return (
-      <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-tr ${activeGradient} text-white font-sans font-extrabold text-sm shadow-xl`}>
+      <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-tr ${activeGradient} text-white font-sans font-extrabold text-sm shadow-xl select-none`}>
         {initials}
       </div>
     );
@@ -59,7 +64,7 @@ export default function Testimonials() {
             What Our Clients Say
           </h2>
           <p className="text-sm sm:text-base text-gray-400 max-w-xl mx-auto leading-relaxed">
-            Read direct alignment feedback from chief technology officers and founders who launched scalable systems under Indiqor Technologies.
+            Read direct alignment feedback from chief technology officers and founders who launched scalable systems under INDIQOR Technologies.
           </p>
         </div>
 
@@ -88,7 +93,7 @@ export default function Testimonials() {
                   </div>
 
                   {/* Feedback text paragraph */}
-                  <p className="font-sans text-lg md:text-xl font-normal leading-relaxed text-gray-200 mb-8 italic">
+                  <p className="font-sans text-base sm:text-lg md:text-xl font-normal leading-relaxed text-gray-200 mb-8 italic">
                     "{t.feedback}"
                   </p>
 
@@ -99,7 +104,7 @@ export default function Testimonials() {
                       <h4 className="font-sans font-extrabold text-base text-white">
                         {t.author}
                       </h4>
-                      <span className="text-xs text-gray-400 flex items-center gap-1.5 mt-1">
+                      <span className="text-xs text-gray-400 flex items-center gap-1.5 mt-1 select-none">
                         <Landmark className="h-3.5 w-3.5 text-blue-400 shrink-0" /> {t.position}, <strong className="text-cyan-400 font-semibold">{t.company}</strong>
                       </span>
                     </div>

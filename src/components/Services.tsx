@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React, { useState } from "react";
 import { SERVICES_DATA } from "../data/agencyData";
 import { Service } from "../types";
@@ -96,7 +101,7 @@ export default function Services({ onOpenConsultation }: ServicesProps) {
               <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between">
                 <button
                   onClick={() => setSelectedService(service)}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-blue-400 hover:text-cyan-300 transition-colors"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-blue-400 hover:text-cyan-300 transition-colors cursor-pointer"
                   id={`btn-learn-${service.id}`}
                 >
                   Learn More <ArrowRight className="h-3 w-3" />
@@ -124,7 +129,7 @@ export default function Services({ onOpenConsultation }: ServicesProps) {
             {/* Top Close */}
             <button
               onClick={() => setSelectedService(null)}
-              className="absolute top-4 right-4 rounded-full border border-white/10 bg-white/5 p-2 text-gray-400 hover:bg-white/10 hover:text-white transition-colors"
+              className="absolute top-4 right-4 rounded-full border border-white/10 bg-white/5 p-2 text-gray-400 hover:bg-white/10 hover:text-white transition-colors cursor-pointer"
               id="btn-close-service-modal"
               aria-label="Close details"
             >
@@ -199,7 +204,7 @@ export default function Services({ onOpenConsultation }: ServicesProps) {
                     setSelectedService(null);
                     onOpenConsultation();
                   }}
-                  className="w-full sm:w-auto rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 text-xs font-bold text-white hover:opacity-90 transition-all text-center"
+                  className="w-full sm:w-auto rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 px-6 py-3 text-xs font-bold text-white hover:opacity-90 transition-all text-center cursor-pointer"
                   id="btn-modal-service-consult"
                 >
                   Initiate Project Blueprint

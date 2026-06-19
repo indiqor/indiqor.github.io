@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React from "react";
 import { Users, Code, Shield, CheckCircle2, Award, Briefcase } from "lucide-react";
 
@@ -52,7 +57,7 @@ export default function AboutCompany() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-16">
           
           <div className="lg:col-span-6 space-y-4">
-            <span className="font-mono text-xs font-semibold tracking-[0.2em] text-cyan-400 uppercase block">
+            <span className="font-mono text-xs font-semibold tracking-[0.25em] text-cyan-400 uppercase block">
               Core Identity
             </span>
             <h2 className="font-sans text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
@@ -63,10 +68,10 @@ export default function AboutCompany() {
 
           <div className="lg:col-span-6 lg:pt-2 space-y-4">
             <p className="text-gray-300 text-base sm:text-lg leading-relaxed">
-              INDIQOR Technologies is a technology company specializing in software development, web applications, mobile applications, cloud solutions, IT consulting, technical training, and internship programs.
+              INDIQOR Technologies is a technology company specializing in custom software development, high-end web applications, mobile platforms, cloud solutions, IT consulting, professional training, and certified internship tracks.
             </p>
             <p className="text-gray-400 text-sm leading-relaxed">
-              We focus on delivering scalable, secure, and innovative solutions while helping students and professionals gain industry-ready skills.
+              We focus on delivering scalable, secure, and innovative credentials while helping students and professionals gain real, industry-ready engineering skills.
             </p>
           </div>
 

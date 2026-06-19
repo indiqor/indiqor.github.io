@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React, { useState } from "react";
 import { FAQ_DATA } from "../data/agencyData";
 import { Plus, Minus, HelpCircle } from "lucide-react";
@@ -41,7 +46,7 @@ export default function FAQSection() {
 
         {/* Accordion Layout */}
         <div className="space-y-4" id="faq-accordions-group">
-          {FAQ_DATA.map((item, idx) => {
+          {FAQ_DATA.map((item) => {
             const isOpen = openId === item.id;
             return (
               <div 
@@ -56,7 +61,7 @@ export default function FAQSection() {
                 {/* Trigger Button */}
                 <button
                   onClick={() => toggleOpen(item.id)}
-                  className="w-full text-left p-6 sm:p-8 flex items-center justify-between gap-4 select-none focus:outline-none"
+                  className="w-full text-left p-6 sm:p-8 flex items-center justify-between gap-4 select-none focus:outline-none cursor-pointer"
                   aria-expanded={isOpen}
                   id={`faq-trigger-${item.id}`}
                 >
@@ -75,8 +80,8 @@ export default function FAQSection() {
 
                 {/* Collapsible Content */}
                 <div 
-                  className={`transition-all duration-300 ease-in-out border-t border-white/5 bg-[#080d1c]/40 ${
-                    isOpen ? "max-h-[500px] opacity-100 p-6 sm:p-8" : "max-h-0 opacity-0 pointer-events-none"
+                  className={`transition-all duration-350 ease-in-out border-t border-white/5 bg-[#080d1c]/40 ${
+                    isOpen ? "max-h-[500px] opacity-100 p-6 sm:p-8" : "max-h-0 opacity-0 pointer-events-none hidden"
                   }`}
                 >
                   <p className="text-xs sm:text-sm text-gray-300 leading-relaxed">

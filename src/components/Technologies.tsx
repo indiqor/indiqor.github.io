@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React, { useState } from "react";
 import { LayoutGrid, Layers, Database, Cpu } from "lucide-react";
 
@@ -25,15 +30,15 @@ export default function Technologies() {
     { name: "CSS3", category: "frontend", useCase: "Responsive grids, flexbox alignments, animations, Tailwind CSS styling systems.", proficiencyScore: "95%", badge: "Styling Core" },
     { name: "JavaScript", category: "frontend", useCase: "Native ES6+ programming, interactive layout controls, fast synchronous rendering.", proficiencyScore: "98%", badge: "Runtime Scripting" },
     { name: "React", category: "frontend", useCase: "State-driven components, virtual DOM renders, custom hooks, Single Page Apps.", proficiencyScore: "95%", badge: "Leader Framework" },
-    { name: "Angular", category: "frontend", useCase: "Modular components, corporate banking frontends, CLI bundles, strict TypeScript specs.", proficiencyScore: "85%", badge: "Enterprise Client" },
+    { name: "Angular", category: "frontend", useCase: "Modular components, corporate systems, CLI bundles, strict TypeScript specs.", proficiencyScore: "85%", badge: "Enterprise Client" },
 
     // Backend
-    { name: "Java", category: "backend", useCase: "Object-oriented structures, robust logic, multithreading and banking transaction security.", proficiencyScore: "96%", badge: "Enterprise JVM" },
+    { name: "Java", category: "backend", useCase: "Object-oriented structures, robust logic, multithreading and database transactional safety.", proficiencyScore: "96%", badge: "Enterprise JVM" },
     { name: "Spring Boot", category: "backend", useCase: "Microservices design pattern, spring security REST controllers, database mapping JPA/Hibernate.", proficiencyScore: "94%", badge: "Microservices Master" },
     { name: "Node.js", category: "backend", useCase: "Asynchronous I/O routing layers, real-time communication protocols, npm module ecosystem.", proficiencyScore: "90%", badge: "Fast API Runtime" },
 
     // Database
-    { name: "MySQL", category: "database", useCase: "Relational columns, SQL queries, transactional safety, standard relational databases.", proficiencyScore: "92%", badge: "OpenSource SQL" },
+    { name: "MySQL", category: "database", useCase: "Relational columns, raw SQL queries, transactional safety, standard relational databases.", proficiencyScore: "92%", badge: "OpenSource SQL" },
     { name: "PostgreSQL", category: "database", useCase: "Advanced transactional metrics, spatial geolocations, JSON data formats, secure schemas.", proficiencyScore: "95%", badge: "Dev Choice SQL" },
     { name: "MongoDB", category: "database", useCase: "Flexible NoSQL document structures, high-performance product listings, dynamic JSON stores.", proficiencyScore: "88%", badge: "Scalable Document NoSQL" },
 
@@ -71,12 +76,12 @@ export default function Technologies() {
           </div>
 
           {/* Tab Selector */}
-          <div className="flex flex-wrap items-center gap-2 bg-[#0c142b] border border-white/5 rounded-2xl p-1.5 self-start shrink-0">
+          <div className="flex flex-wrap items-center gap-1.5 bg-[#0c142b] border border-white/5 rounded-2xl p-1.5 self-start shrink-0">
             {categories.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-1.5 rounded-xl px-4 py-3 text-xs font-bold leading-none cursor-pointer transition-all ${
+                className={`flex items-center gap-1.5 rounded-xl px-4 py-3 text-xs font-bold leading-none cursor-pointer transition-all border border-transparent ${
                   activeTab === tab.id 
                     ? "bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-500/20" 
                     : "text-gray-400 hover:text-white"
@@ -98,7 +103,7 @@ export default function Technologies() {
               id={`tech-card-${tIdx}`}
             >
               <div>
-                <span className="font-mono text-[10px] font-bold text-gray-500 block uppercase tracking-wide">
+                <span className="font-mono text-[10px] font-bold text-gray-500 block uppercase tracking-wide select-none">
                   {tech.badge}
                 </span>
                 
@@ -113,7 +118,7 @@ export default function Technologies() {
 
               {/* Skill Matrix Progress */}
               <div className="mt-6 pt-4 border-t border-white/[0.04]">
-                <div className="flex items-center justify-between text-[10px] font-mono text-gray-400 mb-1">
+                <div className="flex items-center justify-between text-[10px] font-mono text-gray-450 mb-1 select-none">
                   <span>Usage Integration</span>
                   <span className="text-cyan-400 font-bold">{tech.proficiencyScore}</span>
                 </div>

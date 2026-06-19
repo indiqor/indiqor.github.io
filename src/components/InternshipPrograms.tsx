@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React from "react";
 import { INTERNSHIP_DATA, INTERNSHIP_BENEFITS } from "../data/agencyData";
 import { Check, Calendar, Award, Briefcase, Key, Shield, Computer, Terminal, CheckSquare, Star } from "lucide-react";
@@ -49,7 +54,7 @@ export default function InternshipPrograms({ onOpenConsultation }: InternshipPro
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start" id="internships-split-stage">
           
           {/* Left Column: Internship Benefits Sidebar (4 cols) */}
-          <div className="lg:col-span-4 rounded-2xl border border-white/10 bg-[#0c142b]/80 p-6 sm:p-8 relative" id="internships-benefits-panel">
+          <div className="lg:col-span-4 rounded-2xl border border-white/10 bg-[#0c142b]/80 p-6 sm:p-8 relative shadow-xl" id="internships-benefits-panel">
             <div className="flex items-center gap-2 text-purple-400 font-mono text-xs uppercase tracking-wider mb-6">
               <Star className="h-4 w-4" /> Real Advantages
             </div>
@@ -78,7 +83,7 @@ export default function InternshipPrograms({ onOpenConsultation }: InternshipPro
             <div className="mt-8 pt-6 border-t border-white/5">
               <button 
                 onClick={onOpenConsultation}
-                className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 py-3 text-xs font-bold text-white tracking-wide"
+                className="w-full rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 py-3 text-xs font-bold text-white tracking-wide cursor-pointer"
               >
                 Apply For Internship Program
               </button>
@@ -90,7 +95,7 @@ export default function InternshipPrograms({ onOpenConsultation }: InternshipPro
             {INTERNSHIP_DATA.map((prog) => (
               <div 
                 key={prog.id}
-                className="group relative rounded-2xl border border-white/[0.05] bg-gradient-to-r from-[#0c142b]/60 to-[#0c142b]/20 p-6 hover:border-purple-500/30 hover:bg-[#0c142b]/90 hover:shadow-xl hover:shadow-purple-500/5 transition-all duration-300 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+                className="group relative rounded-2xl border border-white/[0.05] bg-gradient-to-r from-[#0c142b]/60 to-[#0c142b]/20 p-6 hover:border-purple-500/30 hover:bg-[#0c142b]/95 hover:shadow-xl hover:shadow-purple-500/5 transition-all duration-300 flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
                 id={`internship-bar-${prog.id}`}
               >
                 
@@ -100,7 +105,7 @@ export default function InternshipPrograms({ onOpenConsultation }: InternshipPro
                     {getIcon(prog.iconName)}
                   </div>
                   <div>
-                    <h3 className="font-sans text-base sm:text-lg font-bold text-white group-hover:text-purple-300 transition-colors">
+                    <h3 className="font-sans text-base sm:text-lg font-bold text-white group-hover:text-purple-300 transition-colors animate">
                       {prog.title}
                     </h3>
                     <p className="mt-1.5 text-xs text-gray-400 max-w-xl leading-relaxed">
@@ -108,7 +113,7 @@ export default function InternshipPrograms({ onOpenConsultation }: InternshipPro
                     </p>
 
                     {/* micro badges */}
-                    <div className="flex flex-wrap items-center gap-2 mt-4 text-[10px] text-gray-300">
+                    <div className="flex flex-wrap items-center gap-2 mt-4 text-[10px] text-gray-350">
                       <span className="inline-flex items-center gap-1 font-mono bg-purple-950/60 border border-purple-500/20 px-2.5 py-1 rounded-full">
                         <Calendar className="h-3 w-3 text-purple-400" /> Duration: {prog.duration}
                       </span>
@@ -125,7 +130,7 @@ export default function InternshipPrograms({ onOpenConsultation }: InternshipPro
                 <div className="w-full md:w-auto shrink-0 self-stretch md:self-auto flex items-end justify-start md:justify-end">
                   <button
                     onClick={onOpenConsultation}
-                    className="w-full md:w-auto rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 py-3 px-5 text-center text-xs font-bold text-gray-300 hover:text-white hover:border-transparent border border-white/5 transition-all"
+                    className="w-full md:w-auto rounded-xl bg-white/5 hover:bg-gradient-to-r hover:from-blue-600 hover:to-cyan-500 py-3 px-5 text-center text-xs font-bold text-gray-300 hover:text-white hover:border-transparent border border-white/5 transition-all cursor-pointer"
                   >
                     Quick Apply
                   </button>

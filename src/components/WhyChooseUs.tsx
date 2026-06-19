@@ -1,3 +1,8 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
 import React from "react";
 import { WHY_CHOOSE_US_DATA } from "../data/agencyData";
 import { 
@@ -60,7 +65,7 @@ export default function WhyChooseUs() {
           {WHY_CHOOSE_US_DATA.map((card, idx) => (
             <div 
               key={card.title}
-              className="group relative flex flex-col justify-between rounded-2xl border border-white/[0.05] bg-[#0c142b]/50 p-6 backdrop-blur-md hover:border-cyan-500/30 hover:bg-[#0c142b]/90 hover:-translate-y-1 transition-all duration-300"
+              className="group relative flex flex-col justify-between rounded-2xl border border-white/[0.05] bg-[#0c142b]/50 p-6 backdrop-blur-md hover:border-cyan-500/30 hover:bg-[#0c142b]/95 hover:-translate-y-1 transition-all duration-300"
               id={`why-card-${idx}`}
             >
               <div>
@@ -70,7 +75,7 @@ export default function WhyChooseUs() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/5 border border-white/5 group-hover:bg-cyan-500/10 group-hover:scale-110 transition-all">
                     {getFeatureIcon(idx)}
                   </div>
-                  <span className="font-mono text-[10px] text-gray-600 group-hover:text-cyan-400/50 transition-colors">
+                  <span className="font-mono text-[10px] text-gray-600 group-hover:text-cyan-400/50 transition-colors select-none">
                     #{(idx + 1).toString().padStart(2, "0")}
                   </span>
                 </div>

@@ -1,408 +1,455 @@
-import { Service, Project } from "../types";
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
 
-export interface TrainingProgram {
-  id: string;
-  title: string;
-  description: string;
-  topics: string[];
-  duration: string;
-  iconName: string;
-}
+import {
+  Project,
+  Service,
+  FAQ,
+  TrainingCourse,
+  InternshipTrack,
+  Testimonial,
+  TrustedBrand,
+  ProcessStep,
+  PricingPlan,
+  VerifiedCertificate
+} from "../types";
 
-export interface InternshipProgram {
-  id: string;
-  title: string;
-  description: string;
-  benefits: string[];
-  duration: string;
-  iconName: string;
-}
-
-export interface FAQItem {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-export const SERVICES_DATA: Service[] = [
-  {
-    id: "custom-software",
-    title: "Custom Software Development",
-    description: "Bespoke systems engineered specifically to streamline your proprietary workflows and accelerate business operations.",
-    details: "We build enterprise-grade software products tailored exactly to match your business processes. Our cross-functional engineering team eliminates manual friction and automates complex backend system routines.",
-    iconName: "Cpu",
-    technologies: ["Java", "Spring Boot", "Node.js", "PostgreSQL", "Docker"],
-    features: [
-      "ERP Development",
-      "CRM Development",
-      "Inventory Management Systems",
-      "Business Automation Solutions"
-    ]
-  },
-  {
-    id: "web-dev",
-    title: "Web Development",
-    description: "High-performance websites and bespoke applications tailored for stellar speed, maximum security, and conversions.",
-    details: "From stunning marketing portals to complex multi-tenant cloud web applications, we combine fast-loading responsive front-ends with robust, scalable APIs.",
-    iconName: "Globe",
-    technologies: ["React JS", "Angular", "HTML5", "CSS3", "JavaScript"],
-    features: [
-      "Corporate Websites",
-      "Business Websites",
-      "E-Commerce Solutions",
-      "Custom Web Applications"
-    ]
-  },
-  {
-    id: "mobile-dev",
-    title: "Mobile App Development",
-    description: "Multi-platform iOS and Android applications powered by fluid UI rendering engines and stable native controllers.",
-    details: "Reach your clients on any screen size. We design feature-rich, beautiful applications that utilize custom device sensors, secure vaults, and robust offline synchronizations.",
-    iconName: "Smartphone",
-    technologies: ["Flutter", "React Native", "Android SDK", "iOS Swift"],
-    features: [
-      "Android Applications",
-      "iOS Applications",
-      "Flutter Applications",
-      "React Native Applications"
-    ]
-  },
-  {
-    id: "cloud-devops",
-    title: "Cloud Solutions & DevOps",
-    description: "Highly available, self-healing public and hybrid cloud clustering backed by automated continuous delivery.",
-    details: "Ensure zero-downtime operations and bulletproof security by containerizing applications and running fully audited auto-scaling clusters.",
-    iconName: "Cloud",
-    technologies: ["AWS", "Azure", "Docker", "Kubernetes", "CI/CD"],
-    features: [
-      "AWS Deployment",
-      "Azure Services",
-      "Docker Containerization",
-      "Kubernetes Orchestration",
-      "CI/CD Pipelines"
-    ]
-  },
-  {
-    id: "it-consulting",
-    title: "IT Consulting",
-    description: "Strategic technological architecture and digital transformation plans focused on scaling technical operations.",
-    details: "Unclog architectural bottlenecks and optimize infrastructure budgets. We help setup modern system design metrics, microservice separations, and database schemas.",
-    iconName: "Briefcase",
-    technologies: ["Architecture", "System Design", "Agile Roadmap", "Consulting"],
-    features: [
-      "Digital Transformation",
-      "Technology Consulting",
-      "Architecture Planning",
-      "System Design"
-    ]
-  },
-  {
-    id: "support-maintenance",
-    title: "Software Support & Maintenance",
-    description: "Ongoing operating system upscaling, real-time bug mitigations, and responsive performance tune-ups.",
-    details: "Ensure that your platforms stay updated, fast, and entirely safe from malicious exposure. Our active engineers provide continuous application checks and security validations.",
-    iconName: "Wrench",
-    technologies: ["Hotfixes", "Security Patching", "OS Upgrades", "Logs Audit"],
-    features: [
-      "Application Maintenance",
-      "Performance Optimization",
-      "Security Updates",
-      "Bug Fixes"
-    ]
-  }
-];
-
-export const TRAINING_DATA: TrainingProgram[] = [
-  {
-    id: "t-java",
-    title: "Java Development Training",
-    description: "Master enterprise programming with a strong ground in object-oriented fundamentals, data structures, and multithreading architectures.",
-    topics: [
-      "Core Java & Syntax rules",
-      "OOP Concepts & Implementations",
-      "Collections Framework internals",
-      "Exception Handling methodologies",
-      "Multithreading & Async routines",
-      "Java 8 Features & Streams API"
-    ],
-    duration: "6 Weeks (Live Interactive Classes)",
-    iconName: "KeyRound"
-  },
-  {
-    id: "t-springboot",
-    title: "Spring Boot Training",
-    description: "Build industrial Microservices, REST APIs, and spring security middleware solutions with enterprise databases.",
-    topics: [
-      "REST APIs architecture design",
-      "Spring Security frameworks",
-      "JWT Authentication & Tokens",
-      "JPA/Hibernate Database mapping",
-      "Microservices architectures",
-      "Production-ready API Development"
-    ],
-    duration: "8 Weeks (Advanced Practical)",
-    iconName: "Server"
-  },
-  {
-    id: "t-react",
-    title: "React JS Training",
-    description: "Build stunning, composable front-ends utilizing state-driven functional hooks, navigation route layouts, and high efficiency APIs.",
-    topics: [
-      "Declarative Components & Layouts",
-      "Functional Hooks (useState, useEffect)",
-      "Context API & global structures",
-      "Single Page Routing & Protection",
-      "Axios & Fetch API Integrations",
-      "State Management best practices"
-    ],
-    duration: "6 Weeks (Modern Front-end)",
-    iconName: "Code"
-  },
-  {
-    id: "t-fullstack",
-    title: "Full Stack Development Training",
-    description: "The complete engineering blueprint of modern apps. Connect robust client widgets directly to production database engines.",
-    topics: [
-      "Semantic HTML5 & Modern CSS3",
-      "Dynamic JavaScript logic",
-      "React JS frontend interfaces",
-      "Spring Boot secure backends",
-      "MySQL database schemas & index rules"
-    ],
-    duration: "12 Weeks (Comprehensive Track)",
-    iconName: "Layers"
-  }
-];
-
-export const TRAINING_FEATURES = [
-  "Live Interactive Classes",
-  "Practical Hands-On Assignments",
-  "Real-World Industry Projects",
-  "Rigorous Interview Preparation",
-  "Expert One-on-One Mentorship"
-];
-
-export const INTERNSHIP_DATA: InternshipProgram[] = [
-  {
-    id: "int-java",
-    title: "Java Developer Internship",
-    description: "Contribute immediately to structured backend enterprise builds and core algorithms alongside our senior system architects.",
-    benefits: ["Practical development experience", "Live corporate sandbox projects", "Certificate of Completion"],
-    duration: "3 - 6 Months",
-    iconName: "Key"
-  },
-  {
-    id: "int-springboot",
-    title: "Spring Boot Internship",
-    description: "Write real microservices APIs and optimize production SQL queries for distributed high-traffic backend endpoints.",
-    benefits: ["Industry exposure and mentoring", "JWT security structures setup", "Reference Letter reward"],
-    duration: "3 - 6 Months",
-    iconName: "Shield"
-  },
-  {
-    id: "int-react",
-    title: "React Developer Internship",
-    description: "Sling beautiful Tailwind CSS and React states to engineer stunning dashboards, responsive portals, and complex SaaS screens.",
-    benefits: ["UI component library proficiency", "Dynamic interactive portfolio pieces", "Career placement assistance"],
-    duration: "3 Months",
-    iconName: "Computer"
-  },
-  {
-    id: "int-fullstack",
-    title: "Full Stack Developer Internship",
-    description: "Connect front-end screens with back-end APIs. Handle data migrations, client routing, and secure system modules.",
-    benefits: ["End-to-end software delivery run", "Mentor code reviews & refactoring", "Full Completion Kit"],
-    duration: "6 Months",
-    iconName: "Terminal"
-  },
-  {
-    id: "int-testing",
-    title: "Software Testing Internship",
-    description: "Write rigorous test assertions, automate quality assurance checks, and log functional bugs before products go live.",
-    benefits: ["Automated JUnit testing frameworks", "CI/CD quality gate experience", "QA Analyst skill mapping"],
-    duration: "3 Months",
-    iconName: "CheckSquare"
-  }
-];
-
-export const INTERNSHIP_BENEFITS = [
-  "Live Corporate Projects",
-  "Practical Development Experience",
-  "Dedicated Mentor Guidance",
-  "Direct Industry Exposure",
-  "Official Certificate of Completion",
-  "Long-Term Career Support"
-];
-
-export const PROCESS_STEPS_DATA = [
+export const PROCESS_STEPS_DATA: ProcessStep[] = [
   {
     step: "01",
-    title: "Requirement Analysis",
-    description: "We work directly alongside your teams to gather business rules, system boundaries, and precise feature spec maps."
+    title: "Discovery & Scope",
+    description: "Collaborative consultation covering business rules, database structures, and platform specifications."
   },
   {
     step: "02",
-    title: "Planning & Architecture",
-    description: "Our senior design leads diagram system components, define database indexes, and outline physical deployment patterns."
+    title: "System Architecture",
+    description: "Designing database schemas, Cloud RUN setups, microservice interfaces, and API wireframes."
   },
   {
     step: "03",
-    title: "UI/UX Design",
-    description: "We create interactive high-fidelity user flows and beautiful glassmorphism style assets inside our premium workspace."
+    title: "UI/UX Fine-Tuning",
+    description: "Crafting beautiful high-contrast wireframes, custom dashboards, and user flow animations in Figma."
   },
   {
     step: "04",
-    title: "Development",
-    description: "Our certified coders write clean, type-safe, and scalable code in structured, high-energy SCRUM project sprints."
+    title: "Agile Development",
+    description: "Weekly sprint executions compiling production-ready React frontends with Spring Boot or Node backends."
   },
   {
     step: "05",
-    title: "Testing & Quality Assurance",
-    description: "Automated test suites and manual validation verify accessibility, security clearances, and cross-browser screen renderings."
+    title: "Diagnostics & Testing",
+    description: "Comprehensive unit testing, load testing, security audits, and sandbox validation across key browsers."
   },
   {
     step: "06",
-    title: "Deployment & Support",
-    description: "We deploy secure server bundles onto modern container hostings and initiate proactive server health monitoring."
+    title: "Cloud Deployment",
+    description: "Launching on high-availability AWS or Cloud Run containers with automated CI/CD pipelines in place."
   }
 ];
 
-export const TECHNOLOGIES_DATA = {
-  frontend: [
-    { name: "HTML5", percentage: 95 },
-    { name: "CSS3", percentage: 95 },
-    { name: "JavaScript", percentage: 98 },
-    { name: "React", percentage: 95 },
-    { name: "Angular", percentage: 85 }
-  ],
-  backend: [
-    { name: "Java", percentage: 96 },
-    { name: "Spring Boot", percentage: 94 },
-    { name: "Node.js", percentage: 90 }
-  ],
-  database: [
-    { name: "MySQL", percentage: 92 },
-    { name: "PostgreSQL", percentage: 95 },
-    { name: "MongoDB", percentage: 88 }
-  ],
-  devops: [
-    { name: "AWS", percentage: 89 },
-    { name: "Azure", percentage: 84 },
-    { name: "Docker", percentage: 92 },
-    { name: "Kubernetes", percentage: 86 },
-    { name: "GitHub Actions", percentage: 90 }
-  ]
-};
-
-export const WHY_CHOOSE_US_DATA = [
-  {
-    title: "Experienced Team",
-    description: "Our leadership and software engineers are tech industry veterans with millions of lines of proven production code."
-  },
-  {
-    title: "Industry-Oriented Training",
-    description: "We reject dry academic theory. Our coursework teaches practical development structures actively sought after by leading tech firms."
-  },
-  {
-    title: "Live Project Experience",
-    description: "Every student and intern works side-by-side with genuine codebases, giving them actual context for enterprise challenges."
-  },
-  {
-    title: "Scalable Software Solutions",
-    description: "Our software builds are designed with cloud-native, microservices-aligned configurations to handle massive spikes cleanly."
-  },
-  {
-    title: "Affordable Pricing",
-    description: "We balance highly premium output and top-tier mentorship with highly cost-efficient project pricing models."
-  },
-  {
-    title: "Long-Term Technical Support",
-    description: "We do not vanish after launch. We offer 24/7 server log auditing, performance tunes, and swift software troubleshooting support."
-  },
-  {
-    title: "Modern Technologies",
-    description: "We implement modern cutting-edge stacks—including React, Spring Boot, AWS Docker packages, and advanced AI services."
-  },
-  {
-    title: "Professional Guidance",
-    description: "Every student receives CV screening help, interview rehearsals, and personalized portfolio reviews from industry mentors."
-  }
-];
-
-export const FAQ_DATA: FAQItem[] = [
+export const FAQ_DATA: FAQ[] = [
   {
     id: "faq-1",
-    question: "What software development services do you provide?",
-    answer: "INDIQOR Technologies specializes in Custom Software Development (ERP and CRM systems), high-performance Web Development (Corporate sites and e-commerce), Mobile App Development (iOS, Android, Flutter, React Native), Devops-configured Cloud Solutions, IT Consulting, and long-term Application Maintenance."
+    question: "What core consulting services does INDIQOR Technologies provide?",
+    answer: "We specialize in full-stack custom software development, high-traffic web apps, enterprise systems (Java, Spring Boot, React), cloud migrations, DevOps automation, and specialized IT support models for startups and businesses."
   },
   {
     id: "faq-2",
-    question: "Do you provide internship certificates?",
-    answer: "Yes, absolutely! On successful completion of any project-based internship program, you will receive an official Internship Certificate validating your practical development experience, along with a custom reference letter from your senior team mentor."
+    question: "Are INDIQOR professional training certificates verifiable?",
+    answer: "Yes, absolutely! Each training program and internship includes a certified credential with a unique verified certificate ID. Awardees and employers can verify any credential instantly using our verified Certificate section."
   },
   {
     id: "faq-3",
-    question: "Is training suitable for beginners?",
-    answer: "Yes. Our Java, React JS, Spring Boot, and Full Stack Development training modules are structured to take you from core programming fundamentals all the way up to advanced system architecture. We provide step-by-step guidance suitable for both beginners and juniors."
+    question: "Do you offer placement support after course completion?",
+    answer: "We integrate rigorous industrial mentoring, portfolio-ready project assignments, and resume reviews during training loops. Outstanding students are offered direct hands-on internships here at INDIQOR or shared directly with our partner recruiter desks."
   },
   {
     id: "faq-4",
-    question: "Do you provide live projects?",
-    answer: "Yes. In both our professional training courses and internship tracks, you will be assigned to design, code, and deploy real development sandbox solutions. Our hands-on focus guarantees high confidence during client interviews."
+    question: "What is your agile communication model for active projects?",
+    answer: "We structure active deliverables in bi-weekly SCRUM cycles. Clients gain access to a dedicated staging environment, dashboard progress trackers, and real-time support channels for proactive technical discussions."
   },
   {
     id: "faq-5",
-    question: "Do you offer placement assistance?",
-    answer: "Yes, we offer comprehensive career alignment checks, CV polishing workshops, mock interview rehearsals, technical coding practice sheets, and direct access to partner recruiters to help you land your dream IT role."
-  },
-  {
-    id: "faq-6",
-    question: "How can I contact INDIQOR Technologies?",
-    answer: "You can submit an inquiry directly through our customized interactive form here, send an email to indiqor@rediffmail.com, or use our floating WhatsApp helper on the bottom-right corner of the screen. We respond within 24 hours on all business days."
+    question: "How do I secure an internship space with INDIQOR?",
+    answer: "You can apply via our inquiry forms. Our developers evaluate student applications based on basic technical knowledge and offer project-based tracks involving production-level frameworks and sandbox environments."
   }
-];
-
-export const TRUSTED_BY_LOGOS = [
-  { name: "Enterprise Sprints", type: "Tech Systems" },
-  { name: "Digital Solutions", type: "Consulting Co" },
-  { name: "CloudScale Software", type: "Hosting Giant" },
-  { name: "SaaS Systems LLC", type: "Fintech Grid" },
-  { name: "Global IT Core", type: "Corporate Network" }
 ];
 
 export const PROJECTS_DATA: Project[] = [
   {
-    id: "enterprise-erp",
-    title: "Custom Enterprise ERP Platform",
-    description: "Automated business tracking, invoicing systems, and secure inventory management for cloud-native SME workflow solutions.",
-    category: "Software Development",
-    technologies: ["Java", "Spring Boot", "MySQL", "Docker"],
-    results: "35% reduction in manual clerical errors and processing paperwork.",
-    statHighlight: "35% Less Manual Work",
-    longDescription: "A heavy-duty tailored administrative software designed to sync real-time catalog stock quantities, generate custom digital invoices, authorize secure employee clearance levels, and log operational metrics cleanly. Engineered using the Java Virtual Machine, Spring Boot Hibernate maps, and secure container structures in Docker.",
-    clientSector: "Enterprise Automation"
+    id: "ecommerce-platform",
+    clientSector: "FMCG Retail",
+    title: "Global Supply Distribution Engine",
+    description: "High-concurrency merchant checkouts capable of routing thousands of parallel orders across modern multi-region clusters.",
+    statHighlight: "99.99% Node Uptime",
+    technologies: ["React", "Spring Boot", "AWS Aurora", "Docker"],
+    longDescription: "An enterprise B2B distributor dashboard designed to streamline supply chains. Built with custom caching mechanisms and lightweight responsive dashboard layouts to support offline warehouse operations on lower bandwidths.",
+    results: "+240% scale speed, zero transaction drops across high-bandwidth merchant checkouts."
   },
   {
-    id: "fintech-ledgers",
-    title: "Atomically Synchronized Payment Ledger",
-    description: "High security transactional payment systems featuring beautiful responsive visualization widgets.",
-    category: "Web Development",
-    technologies: ["React JS", "Node.js", "PostgreSQL", "Kubernetes"],
-    results: "Reduced microservice response overhead down to 100ms globally.",
-    statHighlight: "100ms Global Sync",
-    longDescription: "Implemented atomic secure locks and relational index optimizations inside a cluster of PostgreSQL database replicas. Designed a stunning, dark-themed interactive customer dashboard powered by modern React hook metrics, Tailwind CSS styling classes, and real-time ledger audits.",
-    clientSector: "Fintech Systems"
+    id: "fintech-dashboard",
+    clientSector: "Corporate FinTech",
+    title: "Secured Compliance Financial Portal",
+    description: "Double-authenticated administrative interface displaying real-time currency fluctuations and multi-tenant ledger verification boards.",
+    statHighlight: "+420k Ledgers Sec",
+    technologies: ["React", "Express API", "PostgreSQL", "GitHub Actions"],
+    longDescription: "An administrative auditing system ensuring compliance under rigid security rules. It includes state-driven charting layers, fast server-side ledger hashes, and responsive financial activity tables.",
+    results: "Sub-millisecond API response queries, zero data leakage through strict security audits."
   },
   {
-    id: "educational-classes",
-    title: "Global Classroom & Grade Dashboard",
-    description: "Integrated online classrooms, assignment grade spreadsheets, and secure course completion certificates.",
-    category: "IT Services",
-    technologies: ["React JS", "Node.js", "MongoDB", "AWS Services"],
-    results: "Seamlessly handles access rules for 10,000+ active student credentials.",
-    statHighlight: "10k+ Active Students",
-    longDescription: "A production-perfect learning management system that handles complex role-based course access, stores course PDF worksheets on cloud buckets, coordinates live video conference triggers, and prints secure completion certifications upon academic completion.",
-    clientSector: "EdTech Portals"
+    id: "healthcare-app",
+    clientSector: "Digital Health",
+    title: "Tele-Health Patient Records Hub",
+    description: "Encrypted record storage and messaging layer enabling direct, safe, sub-second telemetry chats between clinical specialists and remote patients.",
+    statHighlight: "FERPA/HIPAA Compliant",
+    technologies: ["React", "Spring Boot", "MySQL", "Kubernetes"],
+    longDescription: "A HIPAA-compliant electronic health records coordinator. Integrates state-driven video channels, automated consultation summaries via natural language filters, and secure database auditing files.",
+    results: "99.9% telemedicine call quality retention across rural regions, zero security flags."
   }
 ];
 
+export const SERVICES_DATA: Service[] = [
+  {
+    id: "custom-software",
+    title: "Custom Software Engineering",
+    description: "Fully engineered distributed architectures matched with secure corporate business practices and high availability.",
+    iconName: "Cpu",
+    technologies: ["Java", "Spring Boot", "TypeScript", "Docker"],
+    details: "We build highly secure, scalable, and microservice-oriented architectures to resolve tedious business workflows.",
+    features: [
+      "Rigid security compliance",
+      "Robust state monitoring",
+      "Dynamic reporting grids",
+      "Full API microservice builds"
+    ]
+  },
+  {
+    id: "web-dev",
+    title: "State-of-the-Art Web Apps",
+    description: "Stellar visual interfaces paired with performant script engines and modular, clean Tailwind architectures.",
+    iconName: "Globe",
+    technologies: ["React.js", "Vite", "Tailwind CSS", "Node.js"],
+    details: "High-performance responsive single-page web applications constructed to perform efficiently on every modern tablet, phone, or laptop.",
+    features: [
+      "Sub-second lighthouse cycles",
+      "Responsive fluid bento grids",
+      "Accessible W3C layout tags",
+      "Dynamic interactive panels"
+    ]
+  },
+  {
+    id: "mobile-dev",
+    title: "Cross-Platform Mobile Apps",
+    description: "Native-grade user performance across iOS and Android systems using single, reliable codebase setups.",
+    iconName: "Smartphone",
+    technologies: ["React Native", "Flutter", "TypeScript", "Fastlane"],
+    details: "Native compilation optimized for high touch density, push notifications, offline local state storage, and device camera/GPS sensors.",
+    features: [
+      "iOS / Android unified parity",
+      "Frictionless offline state Sync",
+      "Biometric secure lock in",
+      "Sleek gestural transitions"
+    ]
+  },
+  {
+    id: "cloud-devops",
+    title: "Cloud Infrastructure & DevOps",
+    description: "Automated continuous integrations, cloud migration processes, container deployments, and monitoring frameworks.",
+    iconName: "Cloud",
+    technologies: ["AWS", "Azure", "Kubernetes", "GitHub Actions"],
+    details: "Virtualizing staging environments using Docker, zero-downtime micro deployments, and auto-scaling setups on AWS and Azure cloud runtimes.",
+    features: [
+      "Fully automated CI/CD pipelines",
+      "Proactive auto-scaling rules",
+      "Database backup triggers",
+      "Server resource optimization"
+    ]
+  },
+  {
+    id: "support-maintenance",
+    title: "Corporate Support & SLA",
+    description: "Sustained software upgrades, package updates, performance refactors, and prompt technical support.",
+    iconName: "Wrench",
+    technologies: ["Vite", "Spring Boot", "Express", "SLA Engine"],
+    details: "Continuous monitoring, Hot-Fix deployment workflows, and database cleaning loops to keep system architectures operational.",
+    features: [
+      "Guaranteed 24-hour Hot-Fix SLA",
+      "Incremental dependency patch scripts",
+      "Proactive security scanning logs",
+      "Server cleanup automated tasks"
+    ]
+  }
+];
+
+export const TRAINING_DATA: TrainingCourse[] = [
+  {
+    id: "course-java",
+    title: "Advanced Java Fundamentals",
+    iconName: "KeyRound",
+    duration: "10-12 Weeks",
+    description: "Deep dive into solid object-oriented structures, concurrent collections, memory profiles, JVM optimizations, and clean code paradigms.",
+    topics: [
+      "Object-Oriented Programming (OOP)",
+      "Multi-Threading & Concurrency",
+      "File I/O and Socket Streams",
+      "Advanced Collection Architectures"
+    ]
+  },
+  {
+    id: "course-springboot",
+    title: "Spring Boot Microservices",
+    iconName: "Server",
+    duration: "12 Weeks",
+    description: "Learn web services construction, JPA/Hibernate mapping, JSON routing layers, Spring security policies, and microservices orchestration.",
+    topics: [
+      "Spring MVC & REST Endpoints",
+      "Hibernate ORM / Spring Data JPA",
+      "Microservices Config Servers",
+      "OAuth2 Secure Token Handlers"
+    ]
+  },
+  {
+    id: "course-react",
+    title: "Modern React & Tailwind",
+    iconName: "Code",
+    duration: "8-10 Weeks",
+    description: "Master modern single-page frontend engineering, state-driven hooks, performance monitoring, Tailwind grids, and Vite compiling workflows.",
+    topics: [
+      "React Hooks (useState, useEffect)",
+      "Global Context state control",
+      "Fluid Tailwind CSS transitions",
+      "Modular components structure"
+    ]
+  },
+  {
+    id: "course-fullstack",
+    title: "Certified Full-Stack Java-React",
+    iconName: "Layers",
+    duration: "20 Weeks",
+    description: "Comprehensive end-to-end curriculum bridging responsive React visual dashboards with robust enterprise Spring Boot database servers.",
+    topics: [
+      "React + Spring REST Integration",
+      "MySQL Table Relationships",
+      "Docker Container Deployments",
+      "Real-world Portfolio Sandbox build"
+    ]
+  }
+];
+
+export const TRAINING_FEATURES: string[] = [
+  "Mentor-Led Collaborative Classrooms",
+  "GitHub Sandbox Pull Request Reviews",
+  "Industry-standard Mock Interview Practice",
+  "Unique Verifiable Certificate IDs",
+  "Outstanding Student Job Placement desk"
+];
+
+export const INTERNSHIP_DATA: InternshipTrack[] = [
+  {
+    id: "intern-java-dev",
+    title: "Enterprise Java Developer Internship",
+    iconName: "Shield",
+    duration: "3-6 Months",
+    description: "Collaborate inside actual corporate repository branches, debugging secure transaction pipelines and writing unit-test specifications.",
+    benefits: ["Experience Certificate", "Live-Project Deployment", "Code Reviews"]
+  },
+  {
+    id: "intern-springboot-dev",
+    title: "Backend Microservices Internship",
+    iconName: "Terminal",
+    duration: "3-6 Months",
+    description: "Assist cloud engineers with container configurations, custom Express/Spring APIs, and security database auditing checklists.",
+    benefits: ["Microservice Training", "Verifiable Letter of Exp", "Team Leader Mentorship"]
+  },
+  {
+    id: "intern-react-dev",
+    title: "Frontend UI Developer Internship",
+    iconName: "Key",
+    duration: "3 Months",
+    description: "Build interactive layouts, responsive administrative dashboards, custom graphics integrations, and secure client-side API proxies.",
+    benefits: ["Portfolio Codebases", "Responsive Design Master", "Official Recommendation"]
+  },
+  {
+    id: "intern-fullstack-dev",
+    title: "Full-Stack Software Analyst Internship",
+    iconName: "Computer",
+    duration: "6 Months",
+    description: "Unified cross-functional track covering end-to-end system compilations, database schemas planning, and live production launches.",
+    benefits: ["Full Lifecycle Development", "Senior Architect Seminars", "Direct Placement Priority"]
+  }
+];
+
+export const INTERNSHIP_BENEFITS: string[] = [
+  "Certified Work Experience Credentials",
+  "Direct Participation on Staging Sandboxes",
+  "Weekly Collaborative Tech Scrums",
+  "Hands-On Mentoring with Senior Engineers",
+  "Official Letter of Recommendation (LOR)"
+];
+
+export const WHY_CHOOSE_US_DATA = [
+  {
+    title: "Senior Engineering Mentors",
+    description: "Our instructors actively compile production-grade digital solutions daily."
+  },
+  {
+    title: "No Mock Academics",
+    description: "Every assignment is constructed inside a localized GitHub Sandbox model."
+  },
+  {
+    title: "Verifiable Digital Badges",
+    description: "Instantly showcase authenticated course achievements to recruit desks."
+  },
+  {
+    title: "Highly Performant Stacks",
+    description: "We focus heavily on modern standards (Vite, React, Spring Boot, microservices)."
+  },
+  {
+    title: "Flexible Engagement Models",
+    description: "Custom corporate training blueprints structured to respect timeline parameters."
+  },
+  {
+    title: "Container Ready Deployments",
+    description: "Learn modern DevOps setups, Docker bundles, and continuous integrations."
+  },
+  {
+    title: "Agile Development Loops",
+    description: "Our software is structured under rigid, reliable SCRUM release schedules."
+  },
+  {
+    title: "Lifelong Project Showcase",
+    description: "Maintain live, verified portfolio profiles hosted on the INDIQOR global system."
+  }
+];
+
+export const PRICING_DATA: PricingPlan[] = [
+  {
+    id: "startup-tier",
+    name: "Startup Platform Core",
+    label: "Core Visual Build",
+    price: "$1,499",
+    priceSub: "Startup Entry",
+    features: [
+      "Custom React & Tailwind CSS visual frontends",
+      "Perfect mobile responsive fluid layout grids",
+      "Standard interactive inquiry dashboard",
+      "Automated CI/CD setup on Cloud Run",
+      "3 Months proactive SLA code fixes support"
+    ],
+    popular: false,
+    ctaText: "Select Startup Tier"
+  },
+  {
+    id: "business-tier",
+    name: "Enterprise Business Engine",
+    label: "Fully Stacked Microservices",
+    price: "$4,500",
+    priceSub: "Target Corporate Build",
+    popular: true,
+    features: [
+      "Unified React UI with Spring Boot or Node.js backend",
+      "Secure double-audited Database modeling",
+      "Interactive data charts & ledger monitors",
+      "Authorized JWT authentication pipelines",
+      "Automated backups & Docker builds configuration",
+      "6 Months intensive architectural SLA"
+    ],
+    ctaText: "Select Business Tier"
+  },
+  {
+    id: "custom-enterprise",
+    name: "Custom Enterprise Cloud",
+    label: "Advanced Orchestrated Systems",
+    price: "Custom",
+    priceSub: "Corporate Custom Scope",
+    features: [
+      "Multi-region auto-scaling Kubernetes nodes",
+      "Dedicated senior DevOps infrastructure architects",
+      "Custom API connectors to third-party providers",
+      "Strict legal NDA & custom SLA response parameters",
+      "Continuous load diagnostics and stress assessments"
+    ],
+    popular: false,
+    ctaText: "Contact Corporate Architect"
+  }
+];
+
+export const TRUSTED_BY_LOGOS: TrustedBrand[] = [
+  { name: "Global RetailCorp", type: "FMCG Supply" },
+  { name: "Plexis Health", type: "TeleMedicine SaaS" },
+  { name: "Stellaro FinTech", type: "Compliance Ledger" },
+  { name: "Core Node Systems", type: "DevOps Cluster" }
+];
+
+export const TESTIMONIALS_DATA: Testimonial[] = [
+  {
+    id: "testimonial-1",
+    rating: 5,
+    feedback: "INDIQOR Technologies engineered our multi-merchant warehouse checkouts in record time. Their React integration handles load spikes with flawless performance.",
+    author: "Arindam Roy",
+    position: "Founder & CTO",
+    company: "Plexis distribution"
+  },
+  {
+    id: "testimonial-2",
+    rating: 5,
+    feedback: "The Advanced Java training curated by INDIQOR was instrumental in onboarding our corporate developer desk. Very hands-on, focus-bound, and authentic.",
+    author: "Shreya Ghoshal",
+    position: "HR Engineering Lead",
+    company: "Core Node Systems"
+  },
+  {
+    id: "testimonial-3",
+    rating: 5,
+    feedback: "My React Developer internship at INDIQOR changed my career trajectory. Working on live staging branches with senior architects provided skillsets you can't learn in college.",
+    author: "Mohit Vermani",
+    position: "Associate DevOps Tech",
+    company: "Stellaro Tech"
+  }
+];
+
+// Rich set of Mock Certificates that users can query & verify!
+export const MOCK_CERTIFICATES_DATABASE: VerifiedCertificate[] = [
+  {
+    certificateId: "IND-TR-0042",
+    recipientName: "Rahul Sharma",
+    type: "training",
+    courseName: "Certified Full-Stack Java-React Developer",
+    grade: "Grade A+ (Distinction)",
+    issueDate: "2026-05-12",
+    uuid: "cert_9a8b7c6d5e4f3a2b1c",
+    sha256: "ea840139b4bdf2398cd3847fed23c0be812d45b73d842910fc38ad819ad20412"
+  },
+  {
+    certificateId: "IND-TR-0189",
+    recipientName: "Priya Patel",
+    type: "training",
+    courseName: "Modern React & Tailwind CSS",
+    grade: "Grade A (Excellent)",
+    issueDate: "2026-04-18",
+    uuid: "cert_1a2b3c4d5e6f7a8b9c",
+    sha256: "89c8942df8417cb398de2b79aef41235bc6c88cd9121be56ae4767104b20de29"
+  },
+  {
+    certificateId: "IND-IN-0814",
+    recipientName: "Amit Kumar",
+    type: "internship",
+    courseName: "Backend Microservices Internship",
+    grade: "Outstanding Performance",
+    issueDate: "2026-06-01",
+    uuid: "cert_4f3e2d1c0b9a8f7e6d",
+    sha256: "bc59d8126b4cf8489de45df84bde6ce8b7ab7ff3e120da38741369ae567b41e8"
+  },
+  {
+    certificateId: "IND-IN-0925",
+    recipientName: "Neha Gupta",
+    type: "internship",
+    courseName: "Frontend UI Developer Internship",
+    grade: "Highly Recommended",
+    issueDate: "2026-06-15",
+    uuid: "cert_7e6d5c4b3a2f1e0d9c",
+    sha256: "4731de848debc72f10b8d2ef7bd6cf83d2def82cbde32cfa87ff9e2cd1e86a9f"
+  }
+];
