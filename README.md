@@ -18,3 +18,4 @@ View your app in AI Studio: https://ai.studio/apps/168f21c8-6814-4328-953d-9910f
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+# -indiqor-indiqor.github.io
